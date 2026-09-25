@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBank Bill payments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">MYBANK</span>
+      </div>
+      <ul class="nav-list">
+        <li><a class="nav-link " href="dashboard.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8"></rect><rect x="13" y="3" width="8" height="8"></rect><rect x="3" y="13" width="8" height="8"></rect><rect x="13" y="13" width="8" height="8"></rect></svg></span>Dashboard</a></li>
+        <li><a class="nav-link " href="send.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M6 18L18 6M18 6H9M18 6v9"></path></svg></span>Send money</a></li>
+        <li><a class="nav-link " href="receive.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 18h9M6 18V9"></path></svg></span>Receive money</a></li>
+        <li><a class="nav-link " href="transactions.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span>Transactions</a></li>
+        <li><a class="nav-link " href="airtime.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="1"></rect><path d="M11 18h2"></path></svg></span>Airtime</a></li>
+        <li><a class="nav-link is-active" href="bills.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 8h6M9 12h6"></path></svg></span>Bill payments</a></li>
+        <li><a class="nav-link " href="profile.html"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-7 8-7s8 3 8 7"></path></svg></span>Profile</a></li>
+      </ul>
+      <div class="sidebar-foot">
+        <a class="logout-link" href="#" data-logout><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="M16 17l5-5-5-5"></path><path d="M21 12H9"></path></svg></span>Sign out</a>
+        <div class="sidebar-credit">Built by Babatunde Peter</div>
+      </div>
+    </aside>
+
+    <div>
+      <header class="app-topbar">
+        <button class="topbar-toggle" data-topbar-toggle type="button"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></span></button>
+        <span class="brand-name">MYBANK</span>
+        <span class="topbar-spacer"></span>
+      </header>
+
+      <main class="app-main">
+        <div class="page-head">
+          <div>
+            <div class="page-eyebrow">Bills</div>
+            <h1 class="page-title">Pay a bill</h1>
+          </div>
+        <div class="page-head-tools">
+            <button class="theme-switch" data-theme-track type="button">
+              <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"></path></svg></span>
+              Theme
+            </button>
+            <div class="notif-wrap">
+              <button class="notif-btn" data-notif-btn type="button">
+                <span class="notif-dot" data-notif-dot></span>
+                <svg class="icon" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg>
+              </button>
+              <div class="notif-panel" data-notif-panel></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="section-panel">
+            <div class="section-head">
+              <span class="section-title">Select biller category</span>
+            </div>
+            <div class="biller-grid" data-biller-grid></div>
+
+            <form id="billsForm" novalidate>
+              <div class="field">
+                <label class="field-label" for="billAccount">Customer ID or meter number</label>
+                <input class="field-input" type="text" id="billAccount" placeholder="Enter customer or meter ID" required />
+                <span class="field-hint is-error" data-error="billAccount"></span>
+              </div>
+              <div class="field">
+                <label class="field-label" for="billAmount">Amount</label>
+                <div class="input-prefix">
+                  <span class="input-prefix-tag">&#8358;</span>
+                  <input class="field-input" type="number" id="billAmount" placeholder="0.00" min="1" step="0.01" required />
+                </div>
+                <span class="field-hint is-error" data-error="billAmount"></span>
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">Pay bill</button>
+            </form>
+          </div>
+
+          <div class="section-panel">
+            <div class="section-head">
+              <span class="section-title">Recent bill payments</span>
+            </div>
+            <div data-recent-bills></div>
+          </div>
+        </div>
+
+        <div class="modal-overlay" data-success-modal>
+          <div class="modal-box">
+            <div class="modal-success">
+              <div class="modal-success-mark">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"></path></svg>
+              </div>
+              <p class="modal-success-title">Bill payment successful</p>
+              <p class="field-hint" data-success-detail></p>
+              <button class="btn btn-primary btn-block modal-success-close" data-success-close type="button">Done</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/store.js"></script>
+  <script src="js/bills.js"></script>
+</body>
+</html>

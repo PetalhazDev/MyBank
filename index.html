@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBank Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="auth-shell">
+    <div class="auth-card panel">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">MYBANK</span>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab is-active" data-tab-btn="login" type="button">Sign in</button>
+        <button class="auth-tab" data-tab-btn="register" type="button">Create account</button>
+      </div>
+
+      <div class="auth-panel is-active" data-tab-panel="login">
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="loginEmail">Email address</label>
+            <input class="field-input" type="email" id="loginEmail" placeholder="you@example.com" required />
+            <span class="field-hint is-error" data-error="loginEmail"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="loginPassword">Password</label>
+            <input class="field-input" type="password" id="loginPassword" placeholder="Enter your password" required />
+            <span class="field-hint is-error" data-error="loginPassword"></span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+          <p class="field-hint demo-hint">
+            Demo account: ada@example.com / password123
+          </p>
+        </form>
+      </div>
+
+      <div class="auth-panel" data-tab-panel="register">
+        <form id="registerForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="registerName">Full name</label>
+            <input class="field-input" type="text" id="registerName" placeholder="Full name" required />
+            <span class="field-hint is-error" data-error="registerName"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="registerEmail">Email address</label>
+            <input class="field-input" type="email" id="registerEmail" placeholder="you@example.com" required />
+            <span class="field-hint is-error" data-error="registerEmail"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="registerPhone">Phone number</label>
+            <input class="field-input" type="tel" id="registerPhone" placeholder="0803 000 0000" required />
+            <span class="field-hint is-error" data-error="registerPhone"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="registerPassword">Password</label>
+            <input class="field-input" type="password" id="registerPassword" placeholder="At least 6 characters" required />
+            <span class="field-hint is-error" data-error="registerPassword"></span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+        </form>
+      </div>
+
+      <div class="auth-foot">
+        Protected by MyBank account security. Your data stays on this device.
+        <div class="sidebar-credit">Built by Babatunde Peter</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
