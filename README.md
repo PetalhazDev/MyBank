@@ -27,9 +27,6 @@ A modern personal banking dashboard built with vanilla HTML, CSS, and JavaScript
 - Vanilla JavaScript (no frameworks or build tools)
 - Browser localStorage for data persistence
 
-## Design
-
-The interface uses a dark navy palette with amber and teal accents, notched card panels, and monospace and grotesque typeface pairings for an instrument panel feel. No gradients, no emoji, no external UI libraries.
 
 ## Getting started
 
@@ -48,6 +45,9 @@ Password: password123
 ```
 Or register a new account from the sign up tab.
 
+<img width="1324" height="614" alt="Screenshot 2026-09-25 053439" src="https://github.com/user-attachments/assets/0c49a810-78e1-4099-8b7e-fdb488fd9bba" />
+
+
 ## Project structure
 
 
@@ -63,7 +63,7 @@ mybank/
 ├── css/
 │   └── style.css
 └── js/
-    ├── store.js          # Shared state and localStorage layer
+    ├── store.js          
     ├── auth.js
     ├── dashboard.js
     ├── send.js
@@ -79,9 +79,4 @@ mybank/
 Babatunde Peter
 GitHub: [@PetalhazDev](https://github.com/PetalhazDev)
 
-## License
 
-MIT
-```
-
-Swap in your actual live Vercel link under a "Live demo" line near the top if you want one, and adjust the license section if you're using something other than MIT.
